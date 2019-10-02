@@ -6,18 +6,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
-import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent
+    WeatherComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(allAppRoutes),
+   AppRoutingModule,
   ReactiveFormsModule,
 HttpClientModule],
 
