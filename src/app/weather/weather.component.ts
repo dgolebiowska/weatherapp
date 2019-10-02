@@ -10,7 +10,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class WeatherComponent implements OnInit {
 public weatherSearchForm: FormGroup;
 public weatherData: any;
-
   constructor(private formBulider: FormBuilder,
               private apixuService: ApixuService) { }
 
@@ -19,10 +18,10 @@ public weatherData: any;
       location: ['']
     });
   }
-sendToAPIXU(formValues) {
-this.apixuService
-.getWeather(formValues.location)
-.subscribe(data => this.weatherData = data);
-console.log(this.weatherData);
+  sendToAPIXU(formValues) {
+    this.apixuService.getWeather(formValues.location).subscribe(data => {
+      this.weatherData = data;
+      console.log(this.weatherData);
+    });
 }
 }
